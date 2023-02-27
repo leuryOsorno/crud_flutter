@@ -1,4 +1,5 @@
 import 'package:app_crud_flutter/add_product.dart';
+import 'package:app_crud_flutter/detail_image.dart';
 import 'package:app_crud_flutter/message_response.dart';
 import 'package:flutter/material.dart';
 import 'package:app_crud_flutter/modify_product.dart';
@@ -15,15 +16,18 @@ class _Home_Page extends State<Home_Page> {
     Product(
         name: 'Cuaderno',
         description: 'Rayado 100 hojas, cocido',
-        price: '3000'),
+        price: '3000',
+        product_image:'geneva1.jpg'),
     Product(
         name: 'Cuaderno',
         description: 'Cuadriculado 100 hojas, cocido',
-        price: '3000'),
+        price: '3000',
+        product_image:'Gullwing.jpg'),
     Product(
         name: 'Cuaderno',
         description: 'Doblelínea 100 hojas, cocido',
-        price: '3000')
+        price: '3000',
+        product_image:'lamborghini.jpg')
   ];
 
   @override
@@ -64,10 +68,12 @@ class _Home_Page extends State<Home_Page> {
               leading: Card(
                 child: Text(products[index].name.substring(0, 1)),
               ),
-              trailing: Icon(
+              trailing: IconButton( icon:Icon(
                 Icons.emoji_objects,
                 color: Colors.green,
-              ),
+              ),onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>Detail_image(products[index].product_image)));
+              })
             );
           },
         ),
@@ -127,6 +133,7 @@ class Product {
   var name;
   var description;
   var price;
+  var product_image;
 
-  Product({this.name, this.description, this.price});
+  Product({this.name, this.description, this.price,this.product_image});
 }

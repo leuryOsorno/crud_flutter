@@ -1,4 +1,5 @@
 import 'package:app_crud_flutter/home_page.dart';
+import 'package:app_crud_flutter/detail_image.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Home_Page("Inventario de Productos T de A"),
+      //home: detail_image(),
       color: Colors.green,
     );
   }
