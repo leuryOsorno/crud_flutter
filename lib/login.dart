@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_crud_flutter/home_page.dart';
+import 'package:app_crud_flutter/registro.dart';
 
 class login extends StatelessWidget {
   //const className({Key? key}) : super(key: key);
@@ -39,9 +40,10 @@ class login extends StatelessWidget {
               ),
               Padding(padding: const EdgeInsets.all(8.0)),
               ElevatedButton(
-                child: Text('Register'),
+                child: Text('Registro'),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => registro()));
                 },
               ), // your button beneath text
             ],
